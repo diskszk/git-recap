@@ -10,6 +10,16 @@
             "command": "echo '{\"systemMessage\": \"push前にコードレビュー(/code-review)を実行しましたか？未実施なら先にレビューしてください。\"}'"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(gh pr merge*)",
+            "command": ".claude/hooks/check-pr-approved.sh"
+          }
+        ]
       }
     ]
   }
