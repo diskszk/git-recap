@@ -47,10 +47,10 @@ GitHubユーザー名を入力すると、その人の1年間の活動をWrapped
 
 ## 開発コマンド
 
-- `npm run dev` : 開発サーバー
-- `npm run lint` : ESLint
-- `npm run format` : Prettierでフォーマット
-- `npm run build` : 本番ビルド（デプロイ前に通ることを確認する）
+- `pnpm run dev` : 開発サーバー
+- `pnpm run lint` : ESLint
+- `pnpm run format` : Prettierでフォーマット
+- `pnpm run build` : 本番ビルド（デプロイ前に通ることを確認する）
 
 ## 作業ルール
 
