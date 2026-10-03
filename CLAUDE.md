@@ -24,7 +24,7 @@ src/
 ```
 
 - コンポーネントは `src/components/Foo/` ディレクトリにまとめ、`Foo.tsx` / `Foo.test.tsx` / `index.ts`（`export { Foo } from "./Foo";`）の3ファイルを置く。importは `@/components/Foo` と書く
-- テストは対象ファイルの隣に置く（コロケーション）。`app/` 配下のページにはテストを置かない
+- テストは対象ファイルの隣に置く（コロケーション）。ページ（`app/` 配下の `page.tsx`）の単体テストは、中身が固まるまで書かない
 - パスエイリアス `@/*` は `src/*` を指す（例: `@/components/StatCard`）
 
 ## 画面とルート
@@ -65,11 +65,14 @@ src/
 
 - `pnpm run dev` : 開発サーバー
 - `pnpm run lint` : ESLint
+- `pnpm run test` : Vitestでテスト実行
 - `pnpm run format` : Prettierでフォーマット
+- `pnpm run format:check` : フォーマットの確認（CI用）
 - `pnpm run build` : 本番ビルド（デプロイ前に通ることを確認する）
 
 ## 作業ルール
 
+- 学習目的のため、Claude Codeは学習補助モード（`Learning`）で実行する。`.claude/settings.json` の `outputStyle` で既定値にしてあり、切り替えは `/output-style Learning`（Insightの解説や、設計判断の一部を自分で実装する「Learn by Doing」が出る）
 - 学習目的なので、Next.js特有の判断（Server/Client Componentの切り分け、キャッシュ設定など）をしたときは、理由を1〜2行で説明する
 - 機能は小さく分けて追加し、1つ動いたらコミットする
 - 作業ブランチ名は `feat/作業内容` `fix/作業内容` のように接頭辞を付ける
