@@ -34,6 +34,10 @@ src/
   - `loading.tsx` : 取得中の表示
   - `not-found.tsx` : 存在しないユーザー
   - `opengraph-image.tsx` : 共有用OGP画像（`next/og`）
+- `/dev` : 自前のUIカタログ（開発専用）。コンポーネントを `src/lib/mock.ts` のダミーデータで並べて確認する
+  - `pnpm run dev` で `http://localhost:3000/dev` にアクセスして確認する
+  - `src/app/dev/layout.tsx` で `NODE_ENV === "production"` のとき `notFound()` にする。本番（`pnpm run build && pnpm start`）では404になる
+  - コンポーネントを新規実装したら `src/app/dev/page.tsx` に追加する
 
 ## コンポーネント方針
 
